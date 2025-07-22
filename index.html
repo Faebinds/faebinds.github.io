@@ -1,7 +1,222 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spellbound Bindery - Custom Fantasy Book Rebinding</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <header class="hero">
+        <nav>
+            <div class="logo">Spellbound Bindery</div>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#editor">Book Editor</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hero-content">
+            <h1>Transform Your Beloved Fantasy Tomes</h1>
+            <p>Custom rebinding services to give your well-worn fantasy books the majestic covers they deserve</p>
+            <a href="#editor" class="btn">Design Your Book Now</a>
+        </div>
+    </header>
+
+    <section id="services" class="services">
+        <h2>Our Enchanting Services</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <div class="service-icon">⚔️</div>
+                <h3>Standard Rebinding</h3>
+                <p>Give your paperback a durable hardcover with custom designs</p>
+                <span class="price">From $49</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏰</div>
+                <h3>Deluxe Edition</h3>
+                <p>Premium materials with embossed titles and custom endpapers</p>
+                <span class="price">From $99</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✨</div>
+                <h3>Collector's Masterpiece</h3>
+                <p>Hand-tooled leather, gilt edges, and custom slipcase</p>
+                <span class="price">From $249</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📚</div>
+                <h3>Series Sets</h3>
+                <p>Uniform bindings for your complete series</p>
+                <span class="price">From $399</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="editor" class="book-editor">
+        <h2>Create Your Custom Binding</h2>
+        <div class="editor-container">
+            <div class="book-preview">
+                <div class="book-cover">
+                    <!-- This will be dynamically updated by JavaScript -->
+                    <img src="default-cover.jpg" alt="Your custom book cover" id="cover-display">
+                </div>
+                <div class="book-spine">
+                    <span id="title-display">Your Book Title</span>
+                    <span id="author-display">Author Name</span>
+                </div>
+                <div class="book-back"></div>
+            </div>
+            
+            <div class="editor-options">
+                <div class="option-section">
+                    <h3>Cover Material</h3>
+                    <select id="material-select">
+                        <option value="leather">Premium Leather</option>
+                        <option value="cloth">Linen Cloth</option>
+                        <option value="imitation">Faux Leather</option>
+                        <option value="special">Specialty Materials</option>
+                    </select>
+                </div>
+                
+                <div class="option-section">
+                    <h3>Cover Design</h3>
+                    <div class="design-options">
+                        <div class="design-option" data-design="dragon">
+                            <img src="dragon-design.jpg" alt="Dragon Design">
+                            <span>Dragon Motif</span>
+                        </div>
+                        <div class="design-option" data-design="heraldic">
+                            <img src="heraldic-design.jpg" alt="Heraldic Design">
+                            <span>Heraldic</span>
+                        </div>
+                        <div class="design-option" data-design="runic">
+                            <img src="runic-design.jpg" alt="Runic Design">
+                            <span>Runic</span>
+                        </div>
+                        <div class="design-option" data-design="custom">
+                            <img src="custom-design.jpg" alt="Custom Design">
+                            <span>Upload Your Own</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="option-section">
+                    <h3>Color Scheme</h3>
+                    <div class="color-options">
+                        <div class="color-option" style="background-color: #5e2c04;" data-color="5e2c04"></div>
+                        <div class="color-option" style="background-color: #1a1a2e;" data-color="1a1a2e"></div>
+                        <div class="color-option" style="background-color: #4e3620;" data-color="4e3620"></div>
+                        <div class="color-option" style="background-color: #3d0c02;" data-color="3d0c02"></div>
+                        <div class="color-option" style="background-color: #0d1b2a;" data-color="0d1b2a"></div>
+                    </div>
+                </div>
+                
+                <div class="option-section">
+                    <h3>Title & Author</h3>
+                    <input type="text" id="book-title" placeholder="Book Title">
+                    <input type="text" id="book-author" placeholder="Author Name">
+                    <select id="title-font">
+                        <option value="cinzel">Cinzel</option>
+                        <option value="garamond">Garamond</option>
+                        <option value="blackletter">Blackletter</option>
+                        <option value="runic">Runic</option>
+                    </select>
+                </div>
+                
+                <div class="option-section">
+                    <h3>Special Features</h3>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="gilt-edges">
+                        <label for="gilt-edges">Gilt Edges (+$25)</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="ribbon-marker">
+                        <label for="ribbon-marker">Ribbon Marker (+$10)</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="custom-endpapers">
+                        <label for="custom-endpapers">Custom Endpapers (+$15)</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="slipcase">
+                        <label for="slipcase">Slipcase (+$45)</label>
+                    </div>
+                </div>
+                
+                <button id="add-to-cart" class="btn">Add to Cart - <span id="total-price">$99</span></button>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <h2>Enchanted Transformations</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="before-after1.jpg" alt="Book rebinding before and after">
+                <div class="caption">Paperback to Leather-bound</div>
+            </div>
+            <div class="gallery-item">
+                <img src="before-after2.jpg" alt="Book rebinding before and after">
+                <div class="caption">Complete Series Set</div>
+            </div>
+            <div class="gallery-item">
+                <img src="before-after3.jpg" alt="Book rebinding before and after">
+                <div class="caption">Collector's Edition</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-content">
+            <h2>The Spellbound Story</h2>
+            <p>Founded by fantasy lovers for fantasy lovers, Spellbound Bindery brings the craftsmanship of ancient bookbinding to your modern fantasy collection. Each book is hand-bound by our master artisans who treat every volume with the reverence it deserves.</p>
+            <p>We use only the finest materials and traditional techniques to create heirloom-quality books that will last for generations of readers.</p>
+        </div>
+        <div class="about-image">
+            <img src="bookbinder-working.jpg" alt="Master bookbinder at work">
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Send a Raven</h2>
+        <form>
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <textarea placeholder="Your Message"></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Spellbound Bindery</h3>
+                <p>Giving your beloved fantasy books the binding they deserve since 2015.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#editor">Book Editor</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>contact@spellboundbindery.com</p>
+                <p>+1 (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 Spellbound Bindery. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
